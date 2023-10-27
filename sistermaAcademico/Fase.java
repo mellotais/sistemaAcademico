@@ -1,37 +1,46 @@
 package sistermaAcademico;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Fase {
-	
-	private String nome; 
-	
-	private ArrayList <DisciplinaOfertada>disciplinas;
-	
-	public Fase(String nome) {
-		this.nome = nome;
-	}
+  
+    private String nome;
+    private List<Disciplina> disciplinas = new ArrayList<>();
 
-	public String getNome() {
+    
+    public Fase(String nome) {
+        this.nome = nome;
+    }
+    
+    
+    
+    public String getNome() {
 		return nome;
 	}
 
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-
-
-	public ArrayList<DisciplinaOfertada> getDisciplinas() {
+	
+	public List<Disciplina> getDisciplinas() {
 		return disciplinas;
 	}
 
-	public void setDisciplinas(ArrayList<DisciplinaOfertada> disciplinas) {
+	public void setDisciplinas(List<Disciplina> disciplinas) {
 		this.disciplinas = disciplinas;
 	}
 
+
+	
+	public void adicionarDisciplina(Disciplina disciplina) {
+        disciplinas.add(disciplina);
+    }
+
+
 	@Override
 	public String toString() {
-		return "Fase [nome=" + nome + ", curso=" + curso + ", disciplinas=" + disciplinas + "]";
+		return "Fase [nome=" + nome + ", disciplinas=" + disciplinas + "]";
 	}
 
 	

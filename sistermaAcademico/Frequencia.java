@@ -2,31 +2,52 @@ package sistermaAcademico;
 
 
 public class Frequencia {
+    
 	
-	private float porcentagem;
-	private Matricula matricula;
+	private String data;
+    private boolean presenca;
+    private Aluno aluno;
+    private Disciplina disciplina;
+    private Professor professor;
 
-	private Professor professor;
+    public Frequencia(String data, boolean presenca, Aluno aluno, Disciplina disciplina, Professor professor) {
+        this.data = data;
+        this.presenca = presenca;
+        this.aluno = aluno;
+        this.disciplina = disciplina;
+        this.professor = professor;
+    }
 
-	public Frequencia(float porcentagem) {
-		super();
-		this.porcentagem = porcentagem;
+	public String getData() {
+		return data;
 	}
 
-	public float getPorcentagem() {
-		return porcentagem;
+	public void setData(String data) {
+		this.data = data;
 	}
 
-	public void setPorcentagem(float porcentagem) {
-		this.porcentagem = porcentagem;
+	public boolean isPresenca() {
+		return presenca;
 	}
 
-	public Matricula getMatricula() {
-		return matricula;
+	public void setPresenca(boolean presenca) {
+		this.presenca = presenca;
 	}
 
-	public void setMatricula(Matricula matricula) {
-		this.matricula = matricula;
+	public Aluno getAluno() {
+		return aluno;
+	}
+
+	public void setAluno(Aluno aluno) {
+		this.aluno = aluno;
+	}
+
+	public Disciplina getDisciplina() {
+		return disciplina;
+	}
+
+	public void setDisciplina(Disciplina disciplina) {
+		this.disciplina = disciplina;
 	}
 
 	public Professor getProfessor() {
@@ -38,10 +59,11 @@ public class Frequencia {
 	}
 
 	@Override
-	public String toString() {
-		return "Frequencia [porcentagem=" + porcentagem + ", matricula=" + matricula + ", professor=" + professor + "]";
-	}
-	
-	
-	
+    public String toString() {
+        return "Frequencia [data=" + data + ", presenca=" + presenca + ", aluno=" + aluno.getNome()
+                + ", disciplina=" + disciplina.getNome() + ", professor=" + professor.getNome() + "]";
+    }
+    
+    
+    
 }

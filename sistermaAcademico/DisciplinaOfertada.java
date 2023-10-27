@@ -1,41 +1,54 @@
 package sistermaAcademico;
 
-import java.util.ArrayList;
 
 public class DisciplinaOfertada extends Disciplina {
+    private String data;
+    private boolean ativa;
+    private boolean concluida;
 
-	private Date data;
-	private ArrayList<Disciplina> disciplinas;
+    public DisciplinaOfertada(String nome, String data, boolean ativa, boolean concluida) {
+        super(nome); 
+        this.data = data;
+        this.ativa = ativa;
+        this.concluida = concluida;
+    }
 
+    public String getData() {
+        return data;
+    }
 
+    public void setData(String data) {
+        this.data = data;
+    }
 
-	public DisciplinaOfertada(String nome) {
-		super(nome);
-		
-	}
+    public boolean isAtiva() {
+        return ativa;
+    }
 
-	public DisciplinaOfertada(String nome, ArrayList<Disciplina> disciplinas) {
-		super(nome);
-		this.disciplinas = disciplinas;
-	}
+    public void setAtiva(boolean ativa) {
+        this.ativa = ativa;
+    }
 
-	public ArrayList<Disciplina> getDisciplinas() {
-		return disciplinas;
-	}
+    public boolean isConcluida() {
+        return concluida;
+    }
 
-	public void setDisciplinas(ArrayList<Disciplina> disciplinas) {
-		this.disciplinas = disciplinas;
-	}
+    public void setConcluida(boolean concluida) {
+        this.concluida = concluida;
+    }
 
-	public void addDisciplinas(Disciplina disciplina) {
-		this.disciplinas.add(disciplina);
-	}
-
-	@Override
-	public String toString() {
-		return "DisciplinaOfertada [disciplinas=" + disciplinas + "]";
-	}
-	
-	
-
+    @Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+        builder.append("DisciplinaOfertada [ disciplina=");
+        builder.append(getNome()); 
+        builder.append(", data=");
+        builder.append(data);
+        builder.append(", ativa=");
+        builder.append(ativa);
+        builder.append(", concluida=");
+        builder.append(concluida);
+        builder.append("]");
+        return builder.toString();
+    }
 }

@@ -1,24 +1,30 @@
 package sistermaAcademico;
 
-import java.util.ArrayList;
 
 public class Matricula {
-
-	private int matricula;
-	private Aluno aluno;
-	private ArrayList <Disciplina> disciplinas;
 	
-	public Matricula(int Matricula) {
-		
-		this.matricula = Matricula;
+    private long nMatricula;
+    private Aluno aluno;
+    private Disciplina disciplina;
+    private Curso curso;
+
+    public Matricula(Aluno aluno, Disciplina disciplina) {
+        this.aluno = aluno;
+        this.disciplina = disciplina;
+    }
+    
+    public Matricula(Aluno aluno, Curso curso, long nMatricula) {
+    	this.aluno = aluno;
+    	this.curso = curso;
+    	this.nMatricula = nMatricula;
+    }
+
+	public long getNMatricula() {
+		return nMatricula;
 	}
 
-	public int getMatricula() {
-		return matricula;
-	}
-
-	public void setMatricula(int matricula) {
-		this.matricula = matricula;
+	public void setNMatricula(long nMatricula) {
+		this.nMatricula = nMatricula;
 	}
 
 	public Aluno getAluno() {
@@ -29,18 +35,45 @@ public class Matricula {
 		this.aluno = aluno;
 	}
 
-	public ArrayList<Disciplina> getDisciplinas() {
-		return disciplinas;
+	public Disciplina getDisciplina() {
+		return disciplina;
 	}
 
-	public void setDisciplinas(ArrayList<Disciplina> disciplinas) {
-		this.disciplinas = disciplinas;
+	public void setDisciplina(Disciplina disciplina) {
+		this.disciplina = disciplina;
+	}
+
+	
+	
+	
+	public long getnMatricula() {
+		return nMatricula;
+	}
+
+	public void setnMatricula(long nMatricula) {
+		this.nMatricula = nMatricula;
+	}
+
+	public Curso getCurso() {
+		return curso;
+	}
+
+	public void setCurso(Curso curso) {
+		this.curso = curso;
 	}
 
 	@Override
 	public String toString() {
-		return "Matricula [matricula=" + matricula + ", aluno=" + aluno + ", disciplinas=" + disciplinas + "]";
+		StringBuilder builder = new StringBuilder();
+		builder.append("Matricula [idMatricula=");
+		builder.append(nMatricula);
+		builder.append(", aluno=");
+		builder.append(aluno);
+		builder.append(", disciplina=");
+		builder.append(disciplina);
+		builder.append("]");
+		return builder.toString();
 	}
-	
+
 	
 }

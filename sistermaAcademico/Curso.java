@@ -1,46 +1,73 @@
 package sistermaAcademico;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Curso {
-	
-	private String nome; 
-	private ArrayList<Fase> fase;
-	private ArrayList<Disciplina> disciplinas;
-	
-	public Curso(String nome) {
-		this.nome = nome;
-	}
+    private String nome;
+    private List<Fase> fases = new ArrayList<>();
+    private Professor coordenador;
+    private List<Disciplina> disciplinas = new ArrayList<>();
 
-	public String getNome() {
-		return nome;
-	}
+    public Curso(String nome) {
+        this.nome = nome;
+    }
 
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
+    public Curso(String nome, Professor coordenador) {
+        this.nome = nome;
+        this.coordenador = coordenador;
+    }
 
-	public ArrayList<Fase> getFase() {
-		return fase;
-	}
+    public String getNome() {
+        return nome;
+    }
 
-	public void setFase(ArrayList<Fase> fase) {
-		this.fase = fase;
-	}
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
 
-	public ArrayList<Disciplina> getDisciplinas() {
-		return disciplinas;
-	}
+    public List<Fase> getFases() {
+        return fases;
+    }
 
-	public void setDisciplinas(ArrayList<Disciplina> disciplinas) {
-		this.disciplinas = disciplinas;
-	}
+    public void setFases(List<Fase> fases) {
+        this.fases = fases;
+    }
 
-	@Override
-	public String toString() {
-		return "Curso [nome=" + nome + ", fase=" + fase + ", disciplinas=" + disciplinas + "]";
-	}
-	
-	
-	
+    public Professor getCoordenador() {
+        return coordenador;
+    }
+
+    public void setCoordenador(Professor coordenador) {
+        this.coordenador = coordenador;
+    }
+
+    public List<Disciplina> getDisciplinas() {
+        return disciplinas;
+    }
+
+    public void setDisciplinas(List<Disciplina> disciplinas) {
+        this.disciplinas = disciplinas;
+    }
+
+    public void adicionarFase(Fase fase) {
+        fases.add(fase);
+    }
+
+    public void adicionarDisciplina(Disciplina disciplina) {
+        disciplinas.add(disciplina);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+        builder.append("Curso [nome=");
+        builder.append(nome);
+        builder.append(", fases=");
+        builder.append(fases);
+        builder.append(", coordenador=");
+        builder.append(coordenador);
+        builder.append("]");
+        return builder.toString();
+    }
 }

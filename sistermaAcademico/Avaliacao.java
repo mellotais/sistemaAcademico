@@ -1,50 +1,69 @@
 package sistermaAcademico;
 
 public class Avaliacao {
+    
+	
+	private String data;
+    private double nota;
+    private Professor professor;
+    private Disciplina disciplina;
+    private Aluno aluno;
 
-	private float nota;
-	private Matricula matricula;
-	private Professor professores;
-	private Aluno alunos;
-	
-	
-	
-	public Avaliacao(float nota, Matricula matricula, Professor professores, Aluno alunos) {
-		super();
-		this.nota = nota;
-		this.matricula = matricula;
-		this.professores = professores;
-		this.alunos = alunos;
+    public Avaliacao(String data, double nota, Professor professor, Disciplina disciplina, Aluno aluno) {
+        this.data = data;
+        this.nota = nota;
+        this.professor = professor;
+        this.disciplina = disciplina;
+        this.aluno = aluno;
+    }
+
+	public String getData() {
+		return data;
 	}
-	public float getNota() {
+
+	public void setData(String data) {
+		this.data = data;
+	}
+
+	public double getNota() {
 		return nota;
 	}
-	public void setNota(float nota) {
+
+	public void setNota(double nota) {
 		this.nota = nota;
 	}
-	public Matricula getMatricula() {
-		return matricula;
+
+	public Professor getProfessor() {
+		return professor;
 	}
-	public void setMatricula(Matricula matricula) {
-		this.matricula = matricula;
+
+	public void setProfessor(Professor professor) {
+		this.professor = professor;
 	}
-	public Professor getProfessores() {
-		return professores;
+
+	public Disciplina getDisciplina() {
+		return disciplina;
 	}
-	public void setProfessores(Professor professores) {
-		this.professores = professores;
+
+	public void setDisciplina(Disciplina disciplina) {
+		this.disciplina = disciplina;
 	}
-	public Aluno getAlunos() {
-		return alunos;
+
+	public Aluno getAluno() {
+		return aluno;
 	}
-	public void setAlunos(Aluno alunos) {
-		this.alunos = alunos;
+
+	public void setAluno(Aluno aluno) {
+		this.aluno = aluno;
 	}
-	@Override
-	public String toString() {
-		return "Avaliacao [nota=" + nota + ", matricula=" + matricula + ", professores=" + professores + ", alunos="
-				+ alunos + "]";
-	}
-	
-	
+
+	 @Override
+	    public String toString() {
+	        return "Avaliacao [data=" + data + ", nota=" + nota + ", professor=" + professor.getNome()
+	                + ", disciplina=" + disciplina.getNome() + ", aluno=" + aluno.getNome() + "]";
+	    }
+    
+    
+    
 }
+
